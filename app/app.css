@@ -33,3 +33,18 @@ body {
   content: "";
   padding: 0;
 }
+.center-form{
+  margin: auto;
+  width: 60%;
+  margin-top: 60px;
+  border: solid grey 1px;
+  padding: 10px;
+  border-radius: 5px;
+}
+.css-form input.ng-invalid.ng-touched {
+  background-color: #FA787E;
+}
+
+.css-form input.ng-valid.ng-touched {
+  background-color: #78FA89;
+}
