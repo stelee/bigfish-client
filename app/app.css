@@ -48,3 +48,15 @@ body {
 .css-form input.ng-valid.ng-touched {
   background-color: #78FA89;
 }
+
+.about_value:hover .about_value_icon{
+  display: inline;
+}
+.about_value_icon {
+  display: none;
+  float: right;
+}
+.about_value_icon a {
+  color: blue;
+  text-decoration: underline;
+}

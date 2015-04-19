@@ -12,5 +12,5 @@
     <input type="password" class="form-control" ng-model="user.confirmpassword" id="confirmpassword" name="confirmpassword" required="" password-match="user.password"/>
     <div ng-show="form.confirmpassword.$error.passwordMatch" class="text-danger ng-error" ng-class="error">The confirmed password should match the passoword you set</div>
   </div>
-  <button type="submit" class="btn btn-primary" ng-click="save(user)"">Submit</button>
+  <button type="submit" class="btn btn-primary" ng-click="save(user)">Submit</button>
 </form>
