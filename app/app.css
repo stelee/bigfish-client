@@ -53,3 +53,18 @@ body {
   text-align: center;
   margin: 20px;
 }
+
+.about_value:hover .about_value_icon
+{
+  display: inline;
+}
+.about_value_icon
+{
+  display: none;
+  float: right;
+}
+.about_value_icon a
+{
+  color: blue;
+  text-decoration: underline;
+}

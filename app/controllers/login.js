@@ -5,7 +5,7 @@ exports.registerTo=function(myapp)
     {
       userService.login(user,function(user){
         notificationService.success("login success");
-        $location.path("/dashboard");
+        $location.path("/profile");
       },function(err){
         notificationService.error("login failed");
       })
