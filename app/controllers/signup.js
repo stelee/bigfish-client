@@ -1,21 +1,17 @@
 exports.registerTo=function(myapp)
 {
-  myapp.controller("signup",["$scope","userService",function($scope,userService){
-    $scope.save=function(user)
+  myapp.controller("signup",["$scope","userService","notificationService",function($scope,userService,notificationService){
+    $scope.formSubmitted=false;
+    $scope.save=function(myform,user)
     {
-      if('undefined' == typeof user || user === null)
+      if('undefined' == typeof user || user === null || !myform.$valid)
         return;
-      debugger;
       var user=angular.copy(user);
-      userService.save(user,function(response){
-        if(response.err && response.err.code === 11000)
-        {
-          alert("username is duplicated");
-        }else
-        {
-          alert("saved");
-        }
-
+      userService.save(user,function(user){
+        notificationService.success('User has been saved');
+        $scope.formSubmitted=true;
+      },function(errMsg){
+        notificationService.error(errMsg);
       })
     }
   }])

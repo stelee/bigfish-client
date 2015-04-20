@@ -1,4 +1,4 @@
-<form class="center-form css-form" name="form">
+<form class="center-form css-form" name="form" ng-show="!formSubmitted">
   <div class="form-group">
     <label for="email">Email:</label>
     <input type="email" class="form-control" ng-model="user.email" id="email" required="" name="email"/>
@@ -12,5 +12,8 @@
     <input type="password" class="form-control" ng-model="user.confirmpassword" id="confirmpassword" name="confirmpassword" required="" password-match="user.password"/>
     <div ng-show="form.confirmpassword.$error.passwordMatch" class="text-danger ng-error" ng-class="error">The confirmed password should match the passoword you set</div>
   </div>
-  <button type="submit" class="btn btn-primary" ng-click="save(user)"">Submit</button>
+  <button type="submit" class="btn btn-primary" ng-click="save(form,user)">Submit</button>
 </form>
+<div ng-show="formSubmitted">
+  <h3 class="simpleMessageBoard">Thanks, you can sign in now</h3>
+</div>

@@ -12,6 +12,8 @@
   <link rel="stylesheet" href="../bower_components/html5-boilerplate/css/normalize.css">
   <link rel="stylesheet" href="../bower_components/html5-boilerplate/css/main.css">
   <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../bower_components/pnotify/pnotify.core.css">
+  <link rel="stylesheet" href="../bower_components/pnotify/pnotify.buttons.css">
   <link rel="stylesheet" href="app.css">
   <script src="../bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
 </head>
@@ -28,14 +30,14 @@
           <a class="navbar-brand" href="#">ImpressView</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
-          <form class="navbar-form navbar-right">
+          <form class="navbar-form navbar-right" ng-controller="login">
             <div class="form-group">
-              <input type="text" placeholder="Email" class="form-control">
+              <input type="email" placeholder="Email" class="form-control" ng-model="user.email">
             </div>
             <div class="form-group">
-              <input type="password" placeholder="Password" class="form-control">
+              <input type="password" placeholder="Password" class="form-control" ng-model="user.password">
             </div>
-            <button type="submit" class="btn btn-success">Sign in</button>
+            <button type="submit" class="btn btn-success" ng-click="login(user)">Sign in</button>
             <a type="button" class="btn btn-info" href="#/signup">Sign up</a>
           </form>
         </div><!--/.navbar-collapse -->
@@ -57,6 +59,10 @@
   <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
   <script src="../bower_components/angular/angular.js"></script>
   <script src="../bower_components/angular-route/angular-route.js"></script>
+  <script src="../bower_components/pnotify/pnotify.core.js"></script>
+  <script src="../bower_components/pnotify/pnotify.confirm.js"></script>
+  <script src="../bower_components/pnotify/pnotify.buttons.js"></script>
+  <script src="../bower_components/angular-pnotify/src/angular-pnotify.js"></script>
   <script src="libs/require.js"></script>
 </body>
 </html>

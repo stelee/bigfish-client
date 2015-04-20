@@ -128,8 +128,9 @@
 
   var webnpmEval=function(content,filePath){
     try{
-      var fn=new Function("require","exports","module","scope",content);
-      return define(fn);
+      //var fn=new Function("require","exports","module","scope",content);
+      //return define(fn);
+      return eval("define(function(require,exports,module,scope){"+content+"})");
     }catch(exception)
     {
       console.error("error on "+filePath)

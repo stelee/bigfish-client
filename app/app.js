@@ -11,7 +11,8 @@ var  myapp=angular.module('impressViewApp', [
   'ngRoute',
   'impDirectives',
   'impControllers',
-  'impServices'
+  'impServices',
+  'jlareau.pnotify'
 ]);
 
 require("routers").config(myapp);
