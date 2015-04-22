@@ -30,16 +30,14 @@
           <a class="navbar-brand" href="#">ImpressView</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
-          <form class="navbar-form navbar-right" ng-controller="login">
-            <div class="form-group">
-              <input type="email" placeholder="Email" class="form-control" ng-model="user.email">
-            </div>
-            <div class="form-group">
-              <input type="password" placeholder="Password" class="form-control" ng-model="user.password">
-            </div>
-            <button type="submit" class="btn btn-success" ng-click="login(user)">Sign in</button>
-            <a type="button" class="btn btn-info" href="#/signup">Sign up</a>
-          </form>
+          <ul class="nav navbar-nav" ng-controller="menu">
+            <li ng-repeat="menu in menus">
+              <a ng-href="#{{menu.path}}" ng-class="{active:isActive(menu.path)}">{{menu.name}}</a>
+            </li>
+          </ul>
+          <div ng-controller="login">
+            <div ng-include="template"></div>
+          </div>
         </div><!--/.navbar-collapse -->
       </div>
     </nav>

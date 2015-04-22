@@ -1,7 +1,7 @@
 'use strict';
 
 //dependencies
-require("etc/config");
+var config=require("etc/config");
 require("directive");
 require("controller");
 require("service");
@@ -12,7 +12,31 @@ var  myapp=angular.module('impressViewApp', [
   'impDirectives',
   'impControllers',
   'impServices',
-  'jlareau.pnotify'
+  'jlareau.pnotify',
+  'auth'
 ]);
 
+myapp.constant("appConfig",config.config);
+
+//config the pnotify
+myapp.config(['notificationServiceProvider',function(notificationServiceProvider)
+{
+  notificationServiceProvider.setDefaults({
+            history: false,
+            delay: 1000,
+            closer: false,
+            closer_hover: false
+        });
+}])
+
 require("routers").config(myapp);
+
+myapp.run(['$rootScope','$location','authService',function($rootScope,$location,authService)
+{
+  $rootScope.$on("$locationChangeStart",function(event){
+    if(!authService.hasUser())
+    {
+      $location.path("/signup");
+    }
+  })
+}])
