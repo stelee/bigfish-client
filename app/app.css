@@ -68,3 +68,9 @@ body {
   color: blue;
   text-decoration: underline;
 }
+
+.mainContent
+{
+  margin: auto;
+  margin-top: 20px;
+}

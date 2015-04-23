@@ -2,7 +2,15 @@ exports.registerTo=function(myapp)
 {
   myapp.controller("login",["$scope","userService","notificationService","$location",'authService',
     function($scope,userService,notificationService,$location,authService){
-    $scope.template="views/login.html";
+
+    if(authService.hasUser())
+    {
+      $scope.template="views/afterlogin.html";
+      $scope.user=authService.getUser();
+    }else
+    {
+      $scope.template="views/login.html";
+    }
     $scope.login=function(user)
     {
       userService.login(user,function(user){
@@ -15,6 +23,13 @@ exports.registerTo=function(myapp)
       },function(err){
         notificationService.error("login failed");
       })
+    }
+    $scope.logout=function()
+    {
+      authService.removeUser();
+      $scope.isLogin=false;
+      $scope.template="views/login.html";
+      $location.path("/signup");
     }
   }])
 }

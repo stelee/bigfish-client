@@ -5,13 +5,16 @@ var config=require("etc/config");
 require("directive");
 require("controller");
 require("service");
+require("filter");
 
 //main app
 var  myapp=angular.module('impressViewApp', [
   'ngRoute',
+  'ngSanitize',
   'impDirectives',
   'impControllers',
   'impServices',
+  'filters',
   'jlareau.pnotify',
   'auth'
 ]);
