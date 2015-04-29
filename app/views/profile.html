@@ -1,53 +1,41 @@
-<div class="container Profile">
-  <div class="row">
-    <div class="col-md-12" style="margin:10px 0px;">
-      <img class="img-circle center-block" src="./views/images/ironman.png" alt="Profile Image" width="150" height="150"/>
-    </div>
-  </div>
+<div class="container Profile mainContent">
   <div class="panel panel-default">
     <div class="panel-heading">
-      <h3 class="panel-title">About</h3>
+      <h3 class="panel-title">Profile</h3>
     </div>
-    <div class="panel-body">
+    <div class="panel-body" ng-init="tab = 1">
       <div class="row tabbable">
         <ul class="nav nav-pills nav-stacked col-md-2 col-sm-2">
-          <!-- <li ng-repeat="item in aboutItems" ng-class="{active: isSelect('{{ item.title }}')}" >
-            <a href ng-click="selectItem(item.title)" data-toggle="pill">{{ item.title }}</a> -->
-          <li ng-repeat="item in aboutItems" ng-class="{active: isSelect('{{ item.title }}')}">
-            <a href="/#{{item.title}}" data-toggle="pill">{{ item.title }}</a>
+          <li ng-class="{active: tab === 1}">
+            <a href ng-click="tab=1" data-toggle="pill">Basic Information</a>
+          </li>
+          <li ng-class="{active: tab === 2}">
+            <a href ng-click="tab=2" data-toggle="pill">Contact</a>
+          </li>
+          <li ng-class="{active: tab === 3}">
+            <a href ng-click="tab=3" data-toggle="pill">Payment</a>
           </li>
         </ul>
         <div class="tab-content col-md-10 col-sm-14">
-          <!-- <div ng-repeat="item in aboutItems" ng-show="isSelect('{{ item.title }}')"> -->
-          <div ng-repeat="item in aboutItems" ng-class="{active: isSelect('{{ item.title }}')}" class="tab-pane fade in" id="{{ item.title }}">
-            <table class="table table-hover">
-              <thead>
-                <th>{{ item.title | uppercase }}</th>
-              </thead>
-              <tbody>
-                <tr ng-repeat="key in objectKeys(item.contents)">
-                  <td class="col-md-2">{{key}}</td>
-                  <td class="col-md-10 about_value">{{item.contents[key]}}
-                    <span class="about_value_icon glyphicon glyphicon-pencil">
-                      <a ng-href="/#{{key|removeSpaces}}" data-toggle="collapse">Edit</a>
-                    </span>
-                    <div class="collapse" id="{{key|removeSpaces}}">
-                      <div class="form-group">
-                        <br>
-                        <div class="row">
-                          <div class="col-md-4">
-                            <input type="text" class="form-control" ng-model="itemValue" id="{{key|removeSpaces}}" placeholder="{{item.contents[key]}}"/>
-                          </div>
-                        </div>
-                        <br>
-                        <button type="submit" class="btn btn-primary" data-toggle="collapse" data-target="#{{key|removeSpaces}}" ng-click="changeValue(item.title, key, itemValue)">Save</button>
-                        <button type="submit" class="btn btn-warning" data-toggle="collapse" data-target="#{{key|removeSpaces}}" ng-click="">Cancel</button>
-                      </div>
-                    </div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+          <div class="tab-pane fade in" ng-class="{active: tab === 1}">
+            <h4>Basic Information</h4>
+            <div class="list-group">
+              <div class="list-group-item">
+                    <label>Prefix: </label>
+                    <a href="#" editable-select="profile.user.prefix" e-ng-options="s as s for s  in ['Mr','Mrs','Miss','Unknown']">{{profile.user.prefix||"input your prefix"}}</a>
+              </div>
+              <div class="list-group-item">
+                    <label>Name: </label>
+                    <a href="#" editable-text="profile.user.firstname" style="display: inline;">{{profile.user.firstname||"input your firstname"}}</a>
+                    <a href="#" editable-text="profile.user.lastname" style="display: inline;">{{profile.user.lastname||"input your lastname"}}</a>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane fade in" ng-class="{active: tab === 2}">
+            <h4>Contact</h4>
+          </div>
+          <div class="tab-pane fade in" ng-class="{active: tab === 3}">
+            <h4>Payment</h4>
           </div>
         </div> <!-- End table-content -->
       </div> <!-- End tabable -->

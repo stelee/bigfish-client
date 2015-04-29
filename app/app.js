@@ -16,10 +16,14 @@ var  myapp=angular.module('impressViewApp', [
   'impServices',
   'filters',
   'jlareau.pnotify',
-  'auth'
+  'auth',
+  'xeditable'
 ]);
 
 myapp.constant("appConfig",config.config);
+myapp.run(["editableOptions",function(editableOptions){
+  editableOptions.theme = 'bs3';
+}])
 
 //config the pnotify
 myapp.config(['notificationServiceProvider',function(notificationServiceProvider)

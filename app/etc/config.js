@@ -3,15 +3,19 @@ exports.config={
   menus:[
     {
       path: "/dashboard",
-      name: "Dashboard"
+      name: "Menu"
     },
     {
-      path: "/video",
-      name: "Take Video"
+      path: "/subscription",
+      name: "Subscription"
     },
     {
       path: "/profile",
       name: "Profile"
+    },
+    {
+      path:"/howItWorks",
+      name:"How it works"
     }
   ]
 }

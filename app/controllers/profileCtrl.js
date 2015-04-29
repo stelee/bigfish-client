@@ -1,15 +1,9 @@
 exports.registerTo=function(myapp)
 {
   myapp.controller("profileCtrl", ["$scope", "$filter", function($scope,$filter){
-    $scope.aboutItems = [
-      {title:"Overview",
-       contents: {}},
-      {title:"Address",
-       contents: {"City":"Montreal", "Province":"Quebec", "Country":"Canada", "Zip Code":"H1H 1T1"}},
-      {title:"Contact",
-       contents: {"Mobile Phones":"5145555555", "Email":"hello@example.com", "Social":"Instagram"}}];
-
-    $scope.aboutItem = $scope.aboutItems[1].title;
+    $scope.profile={
+      user:{}
+    };
 
     $scope.objectKeys = function(obj){
      return Object.keys(obj);
