@@ -17,7 +17,8 @@ var  myapp=angular.module('impressViewApp', [
   'filters',
   'jlareau.pnotify',
   'auth',
-  'xeditable'
+  'xeditable',
+  "ui.bootstrap"
 ]);
 
 myapp.constant("appConfig",config.config);
