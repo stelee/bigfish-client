@@ -12,16 +12,18 @@ exports.registerTo=function(myapp)
     $scope.objectKeys = function(obj){
      return Object.keys(obj);
     }
-    $scope.updateUser=function(){
-      console.log("save user");
-      return new Promise(function(resolve,reject){
-        userService.updateProfile($scope.profile,function(profile){
-          resolve(profile);
-        },function(err){
-          reject();
+    $scope.updateUser=_.debounce(
+      function(){
+        console.log("save user");
+        return new Promise(function(resolve,reject){
+          userService.updateProfile($scope.profile,function(profile){
+            resolve(profile);
+          },function(err){
+            reject();
+          })
         })
-      })
-    }
+      }
+    ,500);
     userService.getProfile($scope.user,function(profile){
       if(profile == "null" || profile.length===0){//null from the service
         userService.createProfile($scope.profile,function(profile){

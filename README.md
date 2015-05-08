@@ -1,2 +1,2 @@
 # web-client
-Impressview frontend
+foodpacker frontend

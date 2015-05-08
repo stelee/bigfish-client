@@ -22,16 +22,17 @@
             <div class="list-group">
               <div class="list-group-item">
                     <label>Prefix: </label>
-                    <a href="#" editable-select="profile.user.prefix" e-ng-options="s as s for s  in ['Mr','Mrs','Miss','Unknown']" onaftersave="updateUser()">{{profile.user.prefix||"input your prefix"}}</a>
+                    <a href="#" editable-select="profile.user.prefix" buttons="no" e-ng-options="s as s for s  in ['Mr','Mrs','Miss','Unknown']" onaftersave="updateUser()">{{profile.user.prefix||"input your prefix"}}</a>
               </div>
               <div class="list-group-item">
                     <label>Name: </label>
-                    <a href="#" editable-text="profile.user.firstname"   style="display: inline;" e-required onaftersave="updateUser()">{{profile.user.firstname||"input your firstname"}}</a>
-                    <a href="#" editable-text="profile.user.lastname"  style="display: inline;" e-required onaftersave="updateUser()">{{profile.user.lastname||"input your lastname"}}</a>
+                    <a href="#" editable-text="profile.user.firstname"   blur="submit" style="display: inline;" e-required onaftersave="updateUser()" buttons="no">{{profile.user.firstname||"input your firstname"}}</a>
+                    <a href="#" editable-text="profile.user.lastname"   blur="submit" buttons="no" style="display: inline;" e-required onaftersave="updateUser()">{{profile.user.lastname||"input your lastname"}}</a>
               </div>
               <div class="list-group-item">
-                    <label>Birthday: </label>
-                    <a href="#" editable-bsdate ="profile.user.birthday"  style="display: inline;" onaftersave="updateUser()" e-datepicker-popup="yyyy-MMMM-dd">{{profile.user.birthday||"unknown"}}</a>
+                    <label>Birthday: </label><span>{{profile.user.birthday|date:'yyyy-MM-dd'}}</span>
+                    <datepicker ng-model="profile.user.birthday"  class="well well-sm" ng-change="updateUser()"><datepicker>
+                    <!-- <a href="#" editable-date ="profile.user.birthday|date:'dd/MM/yyyy'"  style="display: inline;" onaftersave="updateUser()">{{profile.user.birthday|date: 'dd/MM/yyyy'}}</a> -->
               </div>
             </div>
           </div>
@@ -40,43 +41,43 @@
             <div class="list-group">
               <div class="list-group-item">
                     <label>Street Number: </label>
-                    <a href="#" editable-number="profile.contact.streetnumber"  e-required onaftersave="updateUser()">{{profile.contact.streetnumber||"empty"}}</a>
+                    <a href="#"  buttons="no" blur="submit" editable-number="profile.contact.streetnumber"  e-required onaftersave="updateUser()">{{profile.contact.streetnumber||"empty"}}</a>
               </div>
               <div class="list-group-item">
                     <label>Street Name: </label>
-                    <a href="#" editable-text="profile.contact.streetname"  e-required onaftersave="updateUser()">{{profile.contact.streetname||"empty"}}</a>
+                    <a href="#"  buttons="no" blur="submit" editable-text="profile.contact.streetname"  e-required onaftersave="updateUser()">{{profile.contact.streetname||"empty"}}</a>
               </div>
               <div class="list-group-item">
                     <label>Apartment No.: </label>
-                    <a href="#" editable-text="profile.contact.apt" onaftersave="updateUser()">{{profile.contact.apt||"empty"}}</a>
+                    <a href="#"  buttons="no" blur="submit" editable-text="profile.contact.apt" onaftersave="updateUser()">{{profile.contact.apt||"empty"}}</a>
               </div>
               <div class="list-group-item">
                     <label>City: </label>
-                    <a href="#" editable-text="profile.contact.city" onaftersave="updateUser()">{{profile.contact.city||"empty"}}</a>
+                    <a href="#"  buttons="no" blur="submit" editable-text="profile.contact.city" onaftersave="updateUser()">{{profile.contact.city||"empty"}}</a>
               </div>
               <div class="list-group-item">
                     <label>Province: </label>
-                    <a href="#" editable-text="profile.contact.province" onaftersave="updateUser()">{{profile.contact.province||"empty"}}</a>
+                    <a href="#"  buttons="no" blur="submit" editable-text="profile.contact.province" onaftersave="updateUser()">{{profile.contact.province||"empty"}}</a>
               </div>
               <div class="list-group-item">
                     <label>Country: </label>
-                    <a href="#" editable-text="profile.contact.country" onaftersave="updateUser()">{{profile.contact.country||"Canada"}}</a>
+                    <a href="#"  buttons="no" blur="submit" editable-text="profile.contact.country" onaftersave="updateUser()">{{profile.contact.country||"Canada"}}</a>
               </div>
               <div class="list-group-item">
                     <label>Postcode: </label>
-                    <a href="#" editable-text="profile.contact.postcode" onaftersave="updateUser()">{{profile.contact.postcode||"empty"}}</a>
+                    <a href="#"  buttons="no" blur="submit" editable-text="profile.contact.postcode" onaftersave="updateUser()">{{profile.contact.postcode||"empty"}}</a>
               </div>
               <div class="list-group-item">
                     <label>Phonenumber(Primary): </label>
-                    <a href="#" editable-tel="profile.contact.phone1" onaftersave="updateUser()">{{profile.contact.phone1||"empty"}}</a>
+                    <a href="#"  buttons="no" blur="submit" editable-tel="profile.contact.phone1" onaftersave="updateUser()">{{profile.contact.phone1||"empty"}}</a>
               </div>
               <div class="list-group-item">
                     <label>Phonenumber(Secondary): </label>
-                    <a href="#" editable-tel="profile.contact.phone2" onaftersave="updateUser()">{{profile.contact.phone2||"empty"}}</a>
+                    <a href="#"  buttons="no" blur="submit" editable-tel="profile.contact.phone2" onaftersave="updateUser()">{{profile.contact.phone2||"empty"}}</a>
               </div>
               <div class="list-group-item">
                     <label>email: </label>
-                    <a href="#" editable-email="profile.contact.email" onaftersave="updateUser()">{{profile.contact.email||user.email || "empty"}}</a>
+                    <a href="#"  buttons="no" blur="submit" editable-email="profile.contact.email" onaftersave="updateUser()">{{profile.contact.email||user.email || "empty"}}</a>
               </div>
             </div>
           </div>
@@ -85,19 +86,19 @@
             <div class="list-group">
               <div class="list-group-item">
                     <label>Holder's Name: </label>
-                    <a href="#" editable-text="profile.payment.holder"  e-required onaftersave="updateUser()">{{profile.payment.holder||"empty"}}</a>
+                    <a href="#"  buttons="no"  blur="submit" editable-text="profile.payment.holder"  e-required onaftersave="updateUser()">{{profile.payment.holder||"empty"}}</a>
               </div>
               <div class="list-group-item">
                     <label>Card Number: </label>
-                    <a href="#" editable-text="profile.payment.cardNumber"  e-required onaftersave="updateUser()">{{profile.payment.cardNumber||"empty"}}</a>
+                    <a href="#"  buttons="no" blur="submit" editable-text="profile.payment.cardNumber"  e-required onaftersave="updateUser()">Ending in: XXXX-{{(profile.payment.cardNumber| cut) ||"unknown"}}</a>
               </div>
               <div class="list-group-item">
                     <label>Expire Date: </label>
-                    <a href="#" editable-text="profile.payment.exp"  e-required e-placeholder="MMYYYY" onaftersave="updateUser()">{{profile.payment.exp||"MMYYYY"}}</a>
+                    <a href="#"  buttons="no"  blur="submit" editable-text="profile.payment.exp"  e-required e-placeholder="MMYYYY" onaftersave="updateUser()">{{profile.payment.exp||"MMYYYY"}}</a>
               </div>
               <div class="list-group-item">
                     <label>CVV: </label>
-                    <a href="#" editable-number="profile.payment.cvv"  e-required onaftersave="updateUser()">{{profile.payment.cvv||"empty"}}</a>
+                    <a href="#"  buttons="no"  blur="submit" editable-number="profile.payment.cvv"  e-required onaftersave="updateUser()">{{profile.payment.cvv||"empty"}}</a>
               </div>
             </div>
           </div>

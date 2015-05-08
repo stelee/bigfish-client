@@ -8,7 +8,7 @@ require("service");
 require("filter");
 
 //main app
-var  myapp=angular.module('impressViewApp', [
+var  myapp=angular.module('foodpackerApp', [
   'ngRoute',
   'ngSanitize',
   'impDirectives',
@@ -18,7 +18,8 @@ var  myapp=angular.module('impressViewApp', [
   'jlareau.pnotify',
   'auth',
   'xeditable',
-  "ui.bootstrap"
+  "ui.bootstrap",
+  "ngTagsInput"
 ]);
 
 myapp.constant("appConfig",config.config);

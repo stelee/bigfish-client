@@ -1,21 +1,23 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html lang="en" ng-app="impressViewApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html lang="en" ng-app="impressViewApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html lang="en" ng-app="impressViewApp" class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html lang="en" ng-app="impressViewApp" class="no-js"> <!--<![endif]-->
+<!--[if lt IE 7]>      <html lang="en" ng-app="foodpackerApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="foodpackerApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="foodpackerApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="foodpackerApp" class="no-js"> <!--<![endif]-->
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
   <title>My AngularJS App</title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="../bower_components/html5-boilerplate/css/normalize.css">
-  <link rel="stylesheet" href="../bower_components/html5-boilerplate/css/main.css">
-  <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="../bower_components/pnotify/pnotify.core.css">
+  <meta name="description" content=""/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="stylesheet" href="../bower_components/html5-boilerplate/css/normalize.css"/>
+  <link rel="stylesheet" href="../bower_components/html5-boilerplate/css/main.css"/>
+  <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="../bower_components/pnotify/pnotify.core.css"/>
   <link rel="stylesheet" href="../bower_components/pnotify/pnotify.buttons.css">
-  <link href="../bower_components/angular-xeditable/dist/css/xeditable.css" rel="stylesheet">
-  <link rel="stylesheet" href="app.css">
+  <link href="../bower_components/angular-xeditable/dist/css/xeditable.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="../bower_components/ng-tags-input/ng-tags-input.min.css"/>
+  <link rel="stylesheet" href="../bower_components/ng-tags-input/ng-tags-input.bootstrap.min.css"/>
+  <link rel="stylesheet" href="app.css"/>
   <script src="../bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
 </head>
 <body>
@@ -28,7 +30,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#/">ImpressView</a>
+          <a class="navbar-brand" href="#/">FPK.Premium</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav" ng-controller="menu">
@@ -49,8 +51,6 @@
 
   <div ng-view></div>
 
-  <div>ImpressView app: v0.1-dev</div>
-
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
   -->
@@ -69,6 +69,8 @@
   <script src="../bower_components/angular-xeditable/dist/js/xeditable.js"></script>
   <script src="../bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
   <script src="../bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+  <script src="../bower_components/underscore/underscore-min.js"></script>
+  <script type="text/javascript" src="../bower_components/ng-tags-input/ng-tags-input.js"></script>
   <script src="libs/require.js"></script>
 </body>
 </html>
