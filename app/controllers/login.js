@@ -1,7 +1,9 @@
 exports.registerTo=function(myapp)
 {
-  myapp.controller("login",["$scope","userService","notificationService","$location",'authService',
-    function($scope,userService,notificationService,$location,authService){
+  myapp.controller("login",["$scope","userService","notificationService","$location",
+  'authService','bgExcellent',
+  function($scope,userService,notificationService,$location,authService,bgExcellent){
+    bgExcellent.setBackground();
 
     if(authService.hasUser())
     {

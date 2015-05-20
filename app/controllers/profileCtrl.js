@@ -1,7 +1,8 @@
 exports.registerTo=function(myapp)
 {
-  myapp.controller("profileCtrl", ["$scope", "$filter","authService", 'userService','notificationService',
-    function($scope,$filter,authService,userService,notificationService){
+  myapp.controller("profileCtrl", ["$scope", "$filter","authService", 'userService','notificationService','bgExcellent',
+    function($scope,$filter,authService,userService,notificationService,bgExcellent){
+    bgExcellent.setBackground();
     $scope.user=authService.getUser();
     $scope.profile={
       email: $scope.user.email,

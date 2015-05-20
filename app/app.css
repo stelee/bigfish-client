@@ -74,3 +74,28 @@ body {
   margin: auto;
   margin-top: 20px;
 }
+.panel
+{
+  margin-top: 10px;
+}
+.pBadge
+{
+  margin-top: -18px;
+  margin-left: -103px;
+  float: left;
+}
+.pBadge > img
+{
+  width: 100px;
+  height: 100px;
+}
+.bgExcellent
+{
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.menuCover > .list-group-item
+{
+  margin-bottom:5px;
+  box-shadow: 3px 3px 5px #888888;
+}

@@ -1,1 +1,16 @@
-<h4>Coooooooooooooool</h4>
+<div class="container Profile mainContent">
+  <ul class="list-group menuCover">
+    <li class="list-group-item" ng-repeat="item in menu">
+      <div class="pull-left" style="padding-right: 15px;">
+        <img ng-src="{{item.image}}" width="200px" height="200px">
+      </div>
+      <div class="media-body">
+        <h4 class="list-group-item-heading">{{item.title}}</h4>
+        <p class="list-group-item-text" ng-bind="item.description"></p>
+      </div>
+      <div ng-show="item.platinum=='yes'" class="pBadge">
+        <img src="images/Platinum-Badge.png"/>
+      </div>
+      <div style="clear:both"></div>
+    </li>
+  </ul>

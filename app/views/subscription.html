@@ -1,42 +1,59 @@
 <div class="container mainContent">
-  <div class="row">
-    <div class="col-xs-6 col-md-4">
-      <div class="thumbnail">
-        <img src="images/package1.jpg" alt="Elite Package">
-        <div class="caption">
-          <h3>Elite</h3>
-          <p>3 small size meals per week, $13 per person per meal, Online cookbook,Free shipping</p>
-          <p><a href  class="btn btn-default" role="button" ng-click="subscribe('elite')" ng-class="{'btn-primary': mysubscription.choice == 'elite'}">Subscribe at $39,00/mo</a></p>
+  <form class="container panel" style="padding-top: 10px;">
+    <div class="row">
+      <div class="col-xs-6 col-md-4">
+        <div class="thumbnail">
+          <img src="images/package1.jpg" alt="Elite Package">
+          <div class="caption">
+            <h3>Elite</h3>
+            <p>3 small size meals per week, $13 per person per meal, Online cookbook,Free shipping</p>
+            <p><a href  class="btn btn-default" role="button" ng-click="subscribe('elite')" ng-class="{'btn-primary': mysubscription.choice == 'elite'}">Subscribe at $39,00/week</a></p>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="col-xs-6 col-md-4">
-      <div class="thumbnail">
-        <img src="images/package2.jpg" alt="Silver Package">
-        <div class="caption">
-          <h3>Silver</h3>
-          <p>3 regular size meals per week, $9 per person per meal,Print cookbook Free shipping</p>
-          <p><a href  class="btn btn-default" role="button" ng-click="subscribe('silver')" ng-class="{'btn-primary': mysubscription.choice == 'silver'}">Subscribe at $54,00/mo</a></p>
+      <div class="col-xs-6 col-md-4">
+        <div class="thumbnail">
+          <img src="images/package2.jpg" alt="Silver Package">
+          <div class="caption">
+            <h3>Silver</h3>
+            <p>3 regular size meals per week, $9 per person per meal,Print cookbook Free shipping</p>
+            <p><a href  class="btn btn-default" role="button" ng-click="subscribe('silver')" ng-class="{'btn-primary': mysubscription.choice == 'silver'}">Subscribe at $54,00/week</a></p>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="col-xs-6 col-md-4">
-      <div class="thumbnail">
-        <img src="images/package3.jpg" alt="Platinum Package">
-        <div class="caption">
-          <h3>Platinum</h3>
-          <p>4 full size meals per week, Idea for a family, Print cookbook, Free shipping</p>
-          <p><a href  class="btn btn-default" role="button" ng-click="subscribe('platinum')" ng-class="{'btn-primary': mysubscription.choice == 'platinum'}">Subscribe at $99,00/mo</a></p>
+      <div class="col-xs-6 col-md-4">
+        <div class="thumbnail">
+          <img src="images/package3.jpg" alt="Platinum Package">
+          <div class="caption">
+            <h3>Platinum</h3>
+            <p>4 full size meals per week, Idea for a family, Print cookbook, Free shipping</p>
+            <p><a href  class="btn btn-default" role="button" ng-click="subscribe('platinum')" ng-class="{'btn-primary': mysubscription.choice == 'platinum'}">Subscribe at $99,00/week</a></p>
+          </div>
         </div>
       </div>
+      <div class="col-xs-12 col-md-12">
+
+        <div class="form-group">
+          <label for="inputLike">I like(spicy, sweet, etc):</label>
+          <tags-input ng-model="like"id="inputLike"  on-tag-added="save()" on-tag-removed="save()">
+            <auto-complete source="loadLikeTags()" load-on-focus="true" load-on-empty="true"></auto-complete>
+          </tags-input>
+        </div>
+        <div class="form-group">
+          <label for="inputDislike">I don't like(nuts, spicy, etc):</label>
+          <tags-input ng-model="dislike" id="inputDislike" on-tag-added="save()" on-tag-removed="save()">
+            <auto-complete source="loadDislikeTags()"></auto-complete>
+          </tags-input>
+        </div>
+        <div class="form-group">
+          <label>Comment:</label>
+          <textarea class="form-control" rows="3" placeholder="what do you want to let us know" ng-change="save()" ng-model="mysubscription.comment"></textarea>
+        </div>
+        <p class="panel">
+          <button class="btn btn-default btn-warning" href role="button" ng-click="unsubscribe()">Unsubscribe</button>
+        </p>
+
+      </div>
     </div>
-    <div class="col-xs-12 col-md-12">
-      <label for="inputLike">I like(spicy, sweet, etc):</label>
-      <tags-input ng-model="like"id="inputLike"  on-tag-added="save()" on-tag-removed="save()"></tags-input>
-      <label for="inputDislike">I don't like(nuts, spicy, etc):</label>
-      <tags-input ng-model="dislike" id="inputDislike" on-tag-added="save()" on-tag-removed="save()"></tags-input>
-      <label>Comment:</label>
-      <textarea class="form-control" rows="3" placeholder="what do you want to let us know" ng-change="save()" ng-model="mysubscription.comment"></textarea>
-    </div>
-  </div>
+  </form>
 </div>

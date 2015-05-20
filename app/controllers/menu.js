@@ -7,6 +7,7 @@ exports.registerTo=function(myapp)
            var active = (viewLocation === $location.path());
            return active;
       };
+      $("#mainMenu").show();
     }
   ])
 }

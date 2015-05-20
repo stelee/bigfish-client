@@ -1,6 +1,7 @@
 exports.registerTo=function(myapp){
-  myapp.controller("subscribeCtrl",["$scope","authService","notificationService","subscriptionService",
-  function($scope,authService,notificationService,subscriptionService){
+  myapp.controller("subscribeCtrl",["$scope","authService","notificationService","subscriptionService",'bgExcellent',
+  function($scope,authService,notificationService,subscriptionService,bgExcellent){
+    bgExcellent.setBackground();
     $scope.user=authService.getUser();
     $scope.mysubscription={
       email:$scope.user.email,
@@ -51,8 +52,34 @@ exports.registerTo=function(myapp){
       })
     },1000);
 
+    $scope.unsubscribe=function(){
+      $scope.mysubscription.choice="";
+
+      $scope.save();
+    }
+
     $scope.test=function(){
       alert();
+    }
+    $scope.loadLikeTags=function(){
+      return [
+        { "text": "spicy" },
+        { "text": "chili" },
+        { "text": "sweet" },
+        { "text": "sugar" },
+        { "text": "milk" }
+      ]
+    }
+    $scope.loadDislikeTags=function(){
+      return [
+        { "text": "spicy" },
+        { "text": "chili" },
+        { "text": "sweet" },
+        { "text": "sugar" },
+        { "text": "milk" },
+        { "text" : "nuts"},
+        { "text" : "peanut"}
+      ]
     }
 
   }]);

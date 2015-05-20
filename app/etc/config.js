@@ -3,7 +3,7 @@ exports.config={
   menus:[
     {
       path: "/dashboard",
-      name: "Menu"
+      name: "This Week"
     },
     {
       path: "/subscription",

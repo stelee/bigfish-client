@@ -1,6 +1,7 @@
 exports.registerTo=function(myapp)
 {
-  myapp.controller("signup",["$scope","userService","notificationService",function($scope,userService,notificationService){
+  myapp.controller("signup",["$scope","userService","notificationService",'bgExcellent',function($scope,userService,notificationService,bgExcellent){
+    bgExcellent.setBackground();
     $scope.formSubmitted=false;
     $scope.save=function(myform,user)
     {

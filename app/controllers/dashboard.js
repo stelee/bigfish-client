@@ -1,5 +1,10 @@
 exports.registerTo=function(myapp)
 {
-  myapp.controller("dashboard",[function(){
+  myapp.controller("dashboard",["$scope","$http","bgExcellent",function($scope,$http,bgExcellent){
+    bgExcellent.setBackground();
+    $scope.menu=[];
+    $http.get("json/menu.json").success(function(resp){
+      $scope.menu=resp;
+    })
   }])
 }

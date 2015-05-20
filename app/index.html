@@ -6,7 +6,7 @@
 <head>
   <meta charset="utf-8"/>
   <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-  <title>My AngularJS App</title>
+  <title>Foodpacker VIP Service</title>
   <meta name="description" content=""/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <link rel="stylesheet" href="../bower_components/html5-boilerplate/css/normalize.css"/>
@@ -33,7 +33,7 @@
           <a class="navbar-brand" href="#/">FPK.Premium</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav" ng-controller="menu">
+          <ul class="nav navbar-nav" ng-controller="menu"  style="display:none" id="mainMenu">
             <li ng-repeat="menu in menus">
               <a ng-href="#{{menu.path}}" ng-class="{active:isActive(menu.path)}">{{menu.name}}</a>
             </li>
@@ -70,7 +70,7 @@
   <script src="../bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
   <script src="../bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
   <script src="../bower_components/underscore/underscore-min.js"></script>
-  <script type="text/javascript" src="../bower_components/ng-tags-input/ng-tags-input.js"></script>
+  <script type="text/javascript" src="libs/ng-tags-input.js"></script>
   <script src="libs/require.js"></script>
 </body>
 </html>
